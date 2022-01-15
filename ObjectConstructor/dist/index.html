@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="library.css">
+    <link rel="stylesheet" href="../node_modules\@fortawesome\fontawesome-free\css\all.css">
+</head>
+
+<body>
+  <div class="container"></div>
+    
+    <dialog id="favDialog">
+        <form method="dialog" id="form">
+          <p>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br>
+
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author"><br>
+
+            <label for="pages">Number of pages:</label><br>
+            <input type="text" id="pages" name="pages"><br>
+
+            <input type="radio" id="read" name="readStatus" value="read">
+            <label for="read">read</label><br>
+            <input type="radio" id="unread" name="readStatus" value="unread">
+            <label for="unread">unread</label><br>
+          </p>
+
+            <button value="cancel" id="cancelButton" onclick="clearForm()" value="Reset">Cancel</button>
+            <button id="confirmBtn" value="default" type="submit">Confirm</button>
+        </form>
+      </dialog>
+      
+        <button id="updateLibrary">Update Library</button>
+</body>
+
+<script src="library.js"></script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Webpage</title>
+</head>
+<body>
+    <h1>
+        THE TITLE OF YOUR WEBPAGE
+      </h1>
+      <div id="container"></div>
+
+</body>
+<script>
+    const container = document.querySelector('#container');
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'This is the glorious text-content!';
+
+    const redPara = document.createElement("p");
+    redPara.classList.add("redPara");
+    redPara.textContent = "Hey I'm red!";
+    redPara.style.color = 'red';
+
+    const blueH3 = document.createElement("h3");
+    blueH3.classList.add("blueH3");
+    blueH3.textContent = "Hey I'm a blue h3!";
+    blueH3.style.color = 'blue';
+
+    const pinkBox = document.createElement("div");
+    pinkBox.classList.add("pinkBox");
+    pinkBox.style.cssText = 'background: pink; border-style: solid; border-color: black';
+
+    const pinkBoxH1 = document.createElement("h1");
+    pinkBoxH1.classList.add("pinkBoxH1");
+    pinkBoxH1.textContent = "I'm in a div";
+
+    const pinkBoxP = document.createElement("p");
+    pinkBoxP.classList.add("pinkBoxP");
+    pinkBoxP.textContent = "ME TOO!";
+
+
+    container.appendChild(content);
+    container.appendChild(redPara);
+    container.appendChild(blueH3);
+    container.appendChild(pinkBox);
+    pinkBox.appendChild(pinkBoxH1);
+    pinkBox.appendChild(pinkBoxP);
+
+</script>
+</html>
+
+<!-- a <p> with red text that says “Hey I’m red!”
+
+an <h3> with blue text that says “I’m a blue h3!”
+
+a <div> with a black border and pink background color with the following elements inside of it:
+another <h1> that says “I’m in a div”
+
+a <p> that says “ME TOO!”
+
+Hint for this one: after creating the div with createElement, append the <h1> and <p> to it before adding it to the container. -->

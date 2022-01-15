@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissors Paper Rock</title>
+</head>
+<body>
+    <label>Get ready to fight!
+        <select class="SPROptions" name="SPROptions">
+          <option value="">- Choose One -</option>
+          <option value="Scissors">Scissors</option>
+          <option value="Paper">Paper</option>
+          <option value="Rock">Rock</option>
+        </select>
+      </label>
+      
+      <div class="result"></div>
+
+    <script>
+
+         function computerChoice(choice) {
+            let result;
+
+            if (choice === 1) {
+                result = "Scissors";
+            } else if (choice === 2) {
+                result = "Paper";
+            } else {
+                result = "Rock";
+            }
+
+            return result;
+        }
+
+        function playRound(pChoice, cChoice) {
+            let result;
+
+            if (pChoice === "Scissors" && cChoice === "Scissors") {
+                result = "draw";
+            } else if (pChoice === "Scissors" && cChoice === "Paper") {
+                result = "win";
+            } else if (pChoice === "Scissors" && cChoice === "Rock") {
+                result = "lose";
+            } else if (pChoice === "Paper" && cChoice === "Scissors") {
+                result = "lose";
+            } else if (pChoice === "Paper" && cChoice === "Paper") {
+                result = "draw";
+            } else if (pChoice === "Paper" && cChoice === "Rock") {
+                result = "win";
+            } else if (pChoice === "Rock" && cChoice === "Scissors") {
+                result = "win";
+            } else if (pChoice === "Rock" && cChoice === "Paper") {
+                result = "lose";
+            } else if (pChoice === "Rock" && cChoice === "Rock") {
+                result = "draw";
+            }
+
+            return result;
+        }
+
+        const selectElement = document.querySelector('.SPROptions');
+
+        selectElement.addEventListener('change', (event) =>{
+            const result = document.querySelector('.result');
+            const randomNumber = Math.floor(Math.random() * 3) + 1;
+            const cChoice = computerChoice(randomNumber);
+            const WLD = playRound(event.target.value, cChoice);
+            result.textContent = `You chose ${event.target.value}, computer chose ${cChoice}...You ${WLD}!`;
+        });
+
+    </script>
+</body>
+</html>

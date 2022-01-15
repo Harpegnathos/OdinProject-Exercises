@@ -1,0 +1,25 @@
+#container{
+    border: 1px solid black;
+    display: inline-block;
+    margin: 1rem;
+
+    .cell{
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+    }
+
+    .row{
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+    }
+
+    .active{
+        background-color: darken(green, 20%);
+    }
+
+    .clearButton{
+        display: block;
+    }
+}

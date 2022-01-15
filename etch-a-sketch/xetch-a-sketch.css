@@ -1,0 +1,18 @@
+#container {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 1rem; }
+  #container .cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black; }
+  #container .row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%; }
+  #container .active {
+    background-color: black; }
+  #container .clearButton {
+    display: block; }
+
+/*# sourceMappingURL=etch-a-sketch.css.map */
